@@ -1,0 +1,34 @@
+---
+import Container from '../components/Container.astro';
+import Title from '../components/Title.astro';
+import Slider from '../components/Slider.astro';
+
+import { title, items } from '../data/feedback.json';
+---
+
+<div class="feedback">
+	<Container visible>
+		<div class="feedback__wrap">
+			<Title title={title} mod={'identical'} />
+			<Slider items={items} />
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.feedback {
+		&__wrap {
+			@include des {
+				padding: d(64) 0 d(100);
+			}
+
+			@include tab {
+				padding: t(64) 0 t(100);
+			}
+
+			@include mob {
+				padding: m(72) 0 m(32);
+			}
+		}
+	}
+</style>

@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Welcome from '../blocks/Welcome.astro';
+import About from '../blocks/About.astro';
+import WeWant from '../blocks/WeWant.astro';
+import Growth from '../blocks/Growth.astro';
+import Chart from '../blocks/Chart.astro';
+import Partners from '../blocks/Partners.astro';
+import Feedback from '../blocks/Feedback.astro';
+import Faq from '../blocks/Faq.astro';
+import ContactUs from '../blocks/ContactUs.astro';
+import Footer from '../blocks/Footer.astro';
+
+const pageSettings = {
+	title: '',
+	descr: ''
+};
+---
+
+<Layout pageSettings={pageSettings}>
+	<Welcome />
+	<About />
+	<WeWant />
+	<Growth />
+	<Chart />
+	<Partners />
+	<Feedback />
+	<Faq />
+	<ContactUs />
+	<Footer />
+</Layout>
