@@ -6,6 +6,8 @@ import Button from '../components/Button.astro';
 import Picture from '../components/Picture.astro';
 
 import { title, list, button, picture } from '../data/welcome.json';
+
+const { lang } = Astro.props;
 ---
 
 <div class="welcome">
@@ -15,9 +17,9 @@ import { title, list, button, picture } from '../data/welcome.json';
 	<Container>
 		<div class="welcome__wrap">
 			<div class="welcome__block">
-				<Title title={title} mod={'welcome'} />
-				<List list={list} />
-				<Button data={button} />
+				<Title lang={lang} title={title} mod={'welcome'} />
+				<List lang={lang} list={list} />
+				<Button lang={lang} data={button} />
 			</div>
 		</div>
 	</Container>

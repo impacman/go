@@ -6,15 +6,17 @@ import List from '../components/List.astro';
 import Picture from '../components/Picture.astro';
 
 import { title, list, descr, picture, love } from '../data/about.json';
+
+const { lang } = Astro.props;
 ---
 
 <div class="about" id="about">
 	<Container>
 		<div class="about__grid">
 			<div class="about__wrap">
-				<Title title={title} mod={'about'} />
-				<Descr descr={descr} mod={'big'} section={'about'} />
-				<List list={list} mod={'big'} />
+				<Title lang={lang} title={title} mod={'about'} />
+				<Descr lang={lang} descr={descr} mod={'big'} section={'about'} />
+				<List lang={lang} list={list} mod={'big'} />
 			</div>
 			<div class="about__img">
 				<Picture picture={picture} />

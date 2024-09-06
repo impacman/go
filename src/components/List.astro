@@ -1,10 +1,7 @@
 ---
 import Check from '../svg/Check.astro';
 
-import selectLang from '../modules/selectLang';
-const lang = selectLang(Astro.url.pathname.split('/'));
-
-const { list, mod, light } = Astro.props;
+const { list, mod, light, lang } = Astro.props;
 const { text } = list;
 
 const check = mod === 'creative' ? true : false;

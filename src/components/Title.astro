@@ -1,8 +1,5 @@
 ---
-import selectLang from '../modules/selectLang';
-const lang = selectLang(Astro.url.pathname.split('/'));
-
-const { title, mod, light, transparent, white } = Astro.props;
+const { title, mod, light, transparent, white, lang } = Astro.props;
 const { type, text } = title;
 
 const Tag = type ? type : 'p';

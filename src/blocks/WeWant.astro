@@ -9,6 +9,8 @@ import Picture from '../components/Picture.astro';
 import Waves from '../svg/Waves.astro';
 
 import { block, content } from '../data/we-want.json';
+
+const { lang } = Astro.props;
 ---
 
 <div class="we-want">
@@ -16,8 +18,8 @@ import { block, content } from '../data/we-want.json';
 		<div class="we-want__grid">
 			<div class="we-want__block">
 				<div class="we-want__block-content">
-					<Title title={block.title} mod={'we-want'} />
-					<Descr descr={block.descr} section={'we-want-block'} />
+					<Title lang={lang} title={block.title} mod={'we-want'} />
+					<Descr lang={lang} descr={block.descr} section={'we-want-block'} />
 				</div>
 				<div class="we-want__block-img">
 					<Picture picture={block.picture} />
@@ -27,12 +29,12 @@ import { block, content } from '../data/we-want.json';
 				</div>
 			</div>
 			<div class="we-want__content">
-				<Title title={content.title} mod={'we-want'} />
-				<Descr descr={content.descr} section={'we-want-content'} />
+				<Title lang={lang} title={content.title} mod={'we-want'} />
+				<Descr lang={lang} descr={content.descr} section={'we-want-content'} />
 				<Dev />
-				<Title title={content.listtitle} mod={'creative-lis'} />
-				<List list={content.list} mod={'creative'} />
-				<Button data={content.button} mod={'list'} />
+				<Title lang={lang} title={content.listtitle} mod={'creative-lis'} />
+				<List lang={lang} list={content.list} mod={'creative'} />
+				<Button lang={lang} data={content.button} mod={'list'} />
 			</div>
 		</div>
 	</Container>

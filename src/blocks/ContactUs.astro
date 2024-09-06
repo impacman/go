@@ -6,6 +6,8 @@ import Picture from '../components/Picture.astro';
 import Button from '../components/Button.astro';
 
 import { title, descr, picture, button } from '../data/contactus.json';
+
+const { lang } = Astro.props;
 ---
 
 <div class="contact-us" id="contact-us">
@@ -14,9 +16,9 @@ import { title, descr, picture, button } from '../data/contactus.json';
 	</div>
 	<Container>
 		<div class="contact-us__wrap">
-			<Title title={title} mod={'about'} white />
-			<Descr descr={descr} mod={'contact-us'} />
-			<Button data={button} mod={'list'} light={'white'} tg />
+			<Title lang={lang} title={title} mod={'about'} white />
+			<Descr lang={lang} descr={descr} mod={'contact-us'} />
+			<Button lang={lang} data={button} mod={'list'} light={'white'} tg />
 		</div>
 	</Container>
 </div>

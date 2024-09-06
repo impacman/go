@@ -6,14 +6,16 @@ import Button from '../components/Button.astro';
 import AccordionUI from '../UI/accordion';
 
 import { title, items, button } from '../data/faq.json';
+
+const { lang } = Astro.props;
 ---
 
 <div class="faq" id="faq">
 	<Container visible>
 		<div class="faq__wrap">
-			<Title title={title} mod={'identical'} />
+			<Title lang={lang} title={title} mod={'identical'} />
 			<AccordionUI client:only="react" items={items} />
-			<Button data={button} mod={'list'} />
+			<Button lang={lang} data={button} mod={'list'} />
 		</div>
 	</Container>
 </div>

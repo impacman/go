@@ -1,10 +1,7 @@
 ---
 import Tg from '../svg/Tg.astro';
 
-import selectLang from '../modules/selectLang';
-const lang = selectLang(Astro.url.pathname.split('/'));
-
-const { data, mod, light, tg } = Astro.props;
+const { data, mod, light, tg, lang } = Astro.props;
 const { href, text } = data;
 
 const Tag = href ? 'a' : 'button';

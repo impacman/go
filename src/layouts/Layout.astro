@@ -6,6 +6,7 @@ interface Props {
 	pageSettings: {
 		title: string;
 		descr: string;
+		lang: string;
 	};
 }
 
@@ -13,7 +14,7 @@ const { pageSettings } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={pageSettings.lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name={pageSettings.descr} content="Astro description" />
@@ -29,7 +30,7 @@ const { pageSettings } = Astro.props;
 		/>
 	</head>
 	<body>
-		<Header />
+		<Header lang={pageSettings.lang} />
 		<Page>
 			<slot />
 		</Page>

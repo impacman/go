@@ -2,6 +2,8 @@
 import Container from './Container.astro';
 import Logo from './Logo.astro';
 import Lang from './Lang.astro';
+
+const { lang } = Astro.props;
 ---
 
 <div class="header">
@@ -16,7 +18,7 @@ import Lang from './Lang.astro';
 			</nav>
 			<div class="header__actions">
 				<a href="#contact-us" class="header__join">Join us</a>
-				<Lang />
+				<Lang lang={lang} />
 			</div>
 		</div>
 	</Container>

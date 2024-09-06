@@ -16,12 +16,14 @@ import ASD from '../svg/Projects/ASD.astro';
 import PD from '../svg/Projects/PD.astro';
 
 import { title, items, projects } from '../data/partners.json';
+
+const { lang } = Astro.props;
 ---
 
 <div class="partners" id="partners">
 	<Container>
 		<div class="partners__wrap">
-			<Title title={title} mod={'partners'} />
+			<Title lang={lang} title={title} mod={'partners'} />
 			<div class="partners__block">
 				{
 					items.map(({ title, listtitle, list, button, picture }) => (
@@ -31,17 +33,23 @@ import { title, items, projects } from '../data/partners.json';
 									<Picture picture={picture} />
 								</div>
 							)}
-							<Title title={title} mod={'partners-list'} transparent={title.transparent ? true : false} white={title.white ? true : false} />
-							<Title title={listtitle} mod={'creative-lis'} light />
+							<Title
+								lang={lang}
+								title={title}
+								mod={'partners-list'}
+								transparent={title.transparent ? true : false}
+								white={title.white ? true : false}
+							/>
+							<Title lang={lang} title={listtitle} mod={'creative-lis'} light />
 							<Dev mod={'min'} light />
-							<List list={list} mod={list.creative ? 'creative' : false} light />
-							{button && <Button data={button} mod={'list'} light />}
+							<List lang={lang} list={list} mod={list.creative ? 'creative' : false} light />
+							{button && <Button lang={lang} data={button} mod={'list'} light />}
 						</div>
 					))
 				}
 			</div>
 			<div class="partners__projects">
-				<Title title={projects.title} mod={'projects'} />
+				<Title lang={lang} title={projects.title} mod={'projects'} />
 				<div class="partners__projects-grid">
 					<DMA />
 					<YCD />

@@ -1,8 +1,5 @@
 ---
-import selectLang from '../modules/selectLang';
-const lang = selectLang(Astro.url.pathname.split('/'));
-
-const { descr, mod, section } = Astro.props;
+const { descr, mod, section, lang } = Astro.props;
 const { text } = descr;
 ---
 

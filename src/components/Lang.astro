@@ -1,9 +1,8 @@
 ---
 import Picture from './Picture.astro';
-import selectLang from '../modules/selectLang';
 import { languages } from '../config.json';
 
-const lang = selectLang(Astro.url.pathname.split('/'));
+const { lang } = Astro.props;
 
 const removeLanguage = () => {
 	if (languages.includes(lang)) {

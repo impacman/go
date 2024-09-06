@@ -4,12 +4,14 @@ import Title from '../components/Title.astro';
 import Slider from '../components/Slider.astro';
 
 import { title, items } from '../data/feedback.json';
+
+const { lang } = Astro.props;
 ---
 
 <div class="feedback">
 	<Container visible>
 		<div class="feedback__wrap">
-			<Title title={title} mod={'identical'} />
+			<Title lang={lang} title={title} mod={'identical'} />
 			<Slider items={items} />
 		</div>
 	</Container>
