@@ -13,7 +13,7 @@ const check = mod === 'creative' ? true : false;
 			<li class="list__item">
 				{check && (
 					<div class="list__item-check">
-						<Check light />
+						<Check light={light} />
 					</div>
 				)}
 				<span set:html={item} />
